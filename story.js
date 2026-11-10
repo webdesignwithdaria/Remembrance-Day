@@ -63,11 +63,13 @@
       splits.push(split);
       if(n===1){
         sentenceCue=lineTime;
-        lineTime=intro.duration()+0.30;
+        lineTime=intro.duration()+0.10;
       }
+      const duration=n===1 ? .52 : .92;
+      const stagger=n===1 ? .022 : .042;
       split.lines.forEach(line=>{
         const words=line.querySelectorAll('.focus_word');
-        intro.fromTo(words,{opacity:0,y:6,filter:'blur(5px)'},{opacity:1,y:0,filter:'blur(0px)',duration:.92,stagger:.042,ease:'power2.out'},lineTime);
+        intro.fromTo(words,{opacity:0,y:6,filter:'blur(5px)'},{opacity:1,y:0,filter:'blur(0px)',duration,stagger,ease:'power2.out'},lineTime);
         lineTime+=.28;
       });
       lineTime+=.12;
@@ -153,6 +155,10 @@
     raf=0; if(!enabled||!dimensions)return;
     const {w,h,art,mobile,size,seat,center,pinX,pinY,landX,landY,waist}=dimensions;
     const p=clamp(scrollY/h,0,total);
+    if(p>=.5 && !root.classList.contains('load-finale')){
+      root.classList.add('load-finale');
+      field.querySelectorAll('img').forEach(img=>{img.loading='eager';});
+    }
     // The street is a real document-height layer. Scroll moves the intact city, figures,
     // and typography together, leaving a hard boundary against the blue question stage.
     accessibility(hero,p<1);
@@ -277,7 +283,7 @@
   addEventListener('hashchange',anchor);
   addEventListener('pageshow',()=>{measure(false);anchor();});
   reduce.addEventListener('change',configure);
-  Promise.allSettled([document.fonts.ready,city.querySelector('img').decode(),source.decode(),mobileWoman.decode(),$('.poppy_original').decode()]).then(()=>{
+  document.fonts.ready.then(()=>{
     ready=true;
     if(enabled){splitChapters();measure(false);introduce();anchor();queue();}
   });

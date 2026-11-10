@@ -57,15 +57,17 @@
       pin.opacity=1; introDone=true; queue();return;
     }
     intro=gs.timeline({onUpdate:queue,onComplete(){introDone=true;queue();}});
-    let lineTime=.24, sentenceCue=.24, firstComplete=0;
+    let lineTime=.24, sentenceCue=.24;
     [...heading.children].forEach((el,n)=>{
       const split=SplitText.create(el,{type:'lines,words',linesClass:'hero_line',wordsClass:'focus_word',aria:'auto'});
       splits.push(split);
-      if(n===1){sentenceCue=lineTime;lineTime=firstComplete+1.05;}
+      if(n===1){
+        sentenceCue=lineTime;
+        lineTime=intro.duration()+0.30;
+      }
       split.lines.forEach(line=>{
         const words=line.querySelectorAll('.focus_word');
         intro.fromTo(words,{opacity:0,y:6,filter:'blur(5px)'},{opacity:1,y:0,filter:'blur(0px)',duration:.92,stagger:.042,ease:'power2.out'},lineTime);
-        if(n===0) firstComplete=lineTime+.92+.042*(words.length-1);
         lineTime+=.28;
       });
       lineTime+=.12;

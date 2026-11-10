@@ -1,0 +1,24 @@
+# Remembrance Day in Canada
+
+> An independent illustrated story about November 11 and the red poppy in Canada.
+
+Website design by Design with Daria. The historical information is based on publicly available materials from Veterans Affairs Canada and the Royal Canadian Legion.
+
+Remembrance Day honours Canadians who served and sacrificed in war, military conflict and peace operations. The date recalls the armistice that ended the fighting on the Western Front at 11 a.m. on November 11, 1918. Two minutes of silence are part of the Canadian observance.
+
+Red poppies grew near soldiers' graves in France and Belgium during the First World War. Canadian physician John McCrae wrote “In Flanders Fields” in 1915. Canada adopted the poppy as a symbol of remembrance in 1921. Today people wear it to honour those who served, and donations to the Legion's Poppy Campaign help Veterans and their families.
+
+## Project pages
+
+- [The story of the poppy](https://remembrance-day.designwithdaria.com/)
+- [About the project and its sources](https://remembrance-day.designwithdaria.com/about.html)
+
+## Website design
+
+- [Design with Daria’s web design portfolio](https://designwithdaria.com/portfolio): Work by the Vancouver freelance web designer behind this scroll-driven website.
+
+## Further reading
+
+- [Remembrance Day and Veterans' Week — Veterans Affairs Canada](https://www.veterans.gc.ca/en/remembrance/get-involved/remembrance-day-veterans-week)
+- [In Flanders Fields — Veterans Affairs Canada](https://www.veterans.gc.ca/en/remembrance/get-involved/ways-remember/flanders-fields)
+- [The Poppy Campaign — The Royal Canadian Legion](https://legion.ca/remembrance/the-poppy-campaign)
